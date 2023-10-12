@@ -16,7 +16,7 @@ Nous vérifions ensuite que les processus sont en cours d'exécution avec la com
 
 **2. Création de l'arborescence dans le HDFS**
 
-![Arbre](assets/arbre.png)
+![Arbre](assets/arbre.svg)
 
 Nous créons la structure demandée dans la racine du HDFS avec les commandes Hadoop suivantes :
 
