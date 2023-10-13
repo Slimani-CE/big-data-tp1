@@ -182,8 +182,6 @@ export HADOOP_OPTS="-Djava.library.path=$HADOOP_PREFIX/lib/native"
    - Modification de hadoop-env.sh, core-site.xml, hdfs-site.xml, mapred-site.xml, yarn-site.xml.
 
 ```bash
-# Édition des fichiers de configuration
-
 nano hadoop-2.7.1/etc/hadoop/hadoop-env.sh
 ```
 ```bash
@@ -191,6 +189,8 @@ JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 ```
 ```bash
 nano hadoop-2.7.1/etc/hadoop/core-site.xml
+```
+```bash
 <configuration>
   <property>
       <name>fs.defaultFS</name>
