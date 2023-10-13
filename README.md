@@ -185,51 +185,63 @@ export HADOOP_OPTS="-Djava.library.path=$HADOOP_PREFIX/lib/native"
 # Édition des fichiers de configuration
 
 nano hadoop-2.7.1/etc/hadoop/hadoop-env.sh
-# JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-
+```
+```bash
+JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+```
+```bash
 nano hadoop-2.7.1/etc/hadoop/core-site.xml
-# <configuration>
-#   <property>
-#       <name>fs.defaultFS</name>
-#       <value>hdfs://localhost:9000</value>
-#   </property>
-# </configuration>
-
+<configuration>
+  <property>
+      <name>fs.defaultFS</name>
+      <value>hdfs://localhost:9000</value>
+  </property>
+</configuration>
+```
+```bash
 nano hadoop-2.7.1/etc/hadoop/hdfs-site.xml
-# <configuration>
-#   <property>
-#       <name>dfs.name.dir</name>
-#       <value>/{chemin}/hdata/dfs/name</value>
-#   </property>
-#   <property>
-#       <name>dfs.data.dir</name>
-#       <value>/{chemin} /hdata/dfs/data</value>
-#   </property>
-#   <property>
-#       <name>dfs.replication</name>
-#       <value>1</value>
-#   </property>
-# </configuration>
-
+```
+```bash
+<configuration>
+  <property>
+      <name>dfs.name.dir</name>
+      <value>/{chemin}/hdata/dfs/name</value>
+  </property>
+  <property>
+      <name>dfs.data.dir</name>
+      <value>/{chemin} /hdata/dfs/data</value>
+  </property>
+  <property>
+      <name>dfs.replication</name>
+      <value>1</value>
+  </property>
+</configuration>
+```
+```bash
 nano hadoop-2.7.1/etc/hadoop/mapred-site.xml.template
-# <configuration>
-#   <property>
-#       <name>mapreduce.framework.name</name>
-#       <value>yarn</value>
-#   </property>
-# </configuration>
-
+```
+```bash
+<configuration>
+  <property>
+      <name>mapreduce.framework.name</name>
+      <value>yarn</value>
+  </property>
+</configuration>
+```
+```bash
 nano hadoop-2.7.1/etc/hadoop/yarn-site.xml
-# <configuration>
-#   <property>
-#       <name>yarn.nodemanager.aux-services</name>
-#       <value>mapreduce_shuffle</value>
-#   </property>
-#   <property>
-#       <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
-#       <value>org.apache.hadoop.mapred.ShuffleHandler</value>
-#   </property>
-# </configuration>
+```
+```bash
+<configuration>
+  <property>
+      <name>yarn.nodemanager.aux-services</name>
+      <value>mapreduce_shuffle</value>
+  </property>
+  <property>
+      <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+      <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+  </property>
+</configuration>
 ```
 
 **6. Chargement des nouvelles configurations :**
