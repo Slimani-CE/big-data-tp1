@@ -48,7 +48,7 @@ echo "CoursCPP2" > CoursCPP2
 echo "CoursCPP3" > CoursCPP3
 hdfs dfs -put CoursCPP{1,2,3} /BDDC/CPP/Cours
 ```
-![Q3](assets/q3_.png)
+![Q3](assets/q3.png)
 
 **4. Affichage du contenu des fichiers CoursCPP1, CoursCPP2 et CoursCPP3**
 
@@ -66,52 +66,54 @@ hdfs dfs -cat /BDDC/CPP/Cours/CoursCPP{1,2,3}
 **5. Copie des fichiers CPP vers le répertoire JAVA**
 
 ```bash
-hdfs dfs -cp /BDDC/CPP/Cours/CoursCPP1 /BDDC/JAVA/Cours/CoursJAVA1
-hdfs dfs -cp /BDDC/CPP/Cours/CoursCPP2 /BDDC/JAVA/Cours/CoursJAVA2
-hdfs dfs -cp /BDDC/CPP/Cours/CoursCPP3 /BDDC/JAVA/Cours/CoursJAVA3
+hdfs dfs -cp /BDDC/CPP/Cours/CoursCPP{1,2,3} /BDDC/JAVA/Cours
 ```
-
+![q5](assets/q5.png)
 **6. Suppression et renommage des fichiers dans le répertoire JAVA**
 
 ```bash
-hdfs dfs -rm /BDDC/JAVA/Cours/CoursJAVA3
-hdfs dfs -mv /BDDC/JAVA/Cours/CoursJAVA1 /BDDC/JAVA/Cours/CoursJAVA1
-hdfs dfs -mv /BDDC/JAVA/Cours/CoursJAVA2 /BDDC/JAVA/Cours/CoursJAVA2
+hdfs dfs -rm /BDDC/JAVA/Cours/CoursCPP3
+hdfs dfs -mv /BDDC/JAVA/Cours/CoursCPP1 /BDDC/JAVA/Cours/CoursJAVA1
+hdfs dfs -mv /BDDC/JAVA/Cours/CoursCPP2 /BDDC/JAVA/Cours/CoursJAVA2
 ```
-
+![q6](assets/q6.png)
 **7. Création de fichiers locaux**
 
 ```bash
 touch TP1CPP TP2CPP TP1JAVA TP2JAVA TP3JAVA
 ```
+![q7](assets/q7.png)
 
 **8. Copie des fichiers locaux vers le HDFS**
 
 ```bash
-hdfs dfs -copyFromLocal TP1CPP /BDDC/CPP/TPs
-hdfs dfs -copyFromLocal TP2CPP /BDDC/CPP/TPs
-hdfs dfs -copyFromLocal TP1JAVA /BDDC/JAVA/TPs
-hdfs dfs -copyFromLocal TP2JAVA /BDDC/JAVA/TPs
-hdfs dfs -copyFromLocal TP3JAVA /BDDC/JAVA/TPs
+hdfs dfs -copyFromLocal TP{1,2}CPP /BDDC/CPP/TPs
+hdfs dfs -copyFromLocal TP{1,2,3}JAVA /BDDC/JAVA/TPs
 ```
+
+![q8-1](assets/q8-1.png)
+![q8-2](assets/q8-2.png)
 
 **9. Affichage récursif du contenu de BDDC**
 
 ```bash
 hdfs dfs -ls -R /BDDC
 ```
+![q9](assets/q9.png)
 
 **10. Suppression du fichier TP1CPP**
 
 ```bash
 hdfs dfs -rm /BDDC/CPP/TPs/TP1CPP
 ```
+![q10](assets/q10.png)
 
 **11. Suppression du répertoire JAVA et de son contenu**
 
 ```bash
 hdfs dfs -rm -r /BDDC/JAVA
 ```
+![q11](assets/q11.png)
 
 ## Installation HADOOP Sur LINUX
 
