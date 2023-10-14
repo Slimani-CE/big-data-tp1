@@ -1,11 +1,20 @@
 # TP1 : Manipulation du système de fichiers HDFS
 
+## Table des matières
+[Objectif](#objectif)
+[Solution](#solution)
+[API JAVA](#api-java)
+[Installation HADDOP](#installation-hadoop-sur-linux)
+
+
 ## Objectif 
 Ce TP vise à familiariser les apprenants avec le système de fichiers distribué Hadoop (HDFS). Les objectifs spécifiques comprennent le démarrage des processus Hadoop, la création d'une structure d'arborescence dans le HDFS, la manipulation de fichiers en utilisant des commandes Hadoop, la copie de fichiers entre différents répertoires, la visualisation du contenu des fichiers, et la gestion des fichiers locaux et distants.
 
 
 [Installation HADOOP Sur LINUX](#installation-hadoop-sur-linux)
 <hr>
+
+## Solution
 
 **1. Démarrage des processus Hadoop**
 
@@ -115,6 +124,8 @@ hdfs dfs -rm -r /BDDC/JAVA
 ```
 ![q12](assets/q12.png)
 
+## API JAVA
+Pour accéder au code source de l'API et explorer le dépôt GitHub associé, veuillez visiter [github.com/Slimani-CE/hadoop-crud-api](https://github.com/Slimani-CE/hadoop-crud-api) 
 ## Installation HADOOP Sur LINUX
 
 **1. Installation de Java 8 :**
