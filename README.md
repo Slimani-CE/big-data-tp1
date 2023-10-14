@@ -84,36 +84,36 @@ touch TP1CPP TP2CPP TP1JAVA TP2JAVA TP3JAVA
 ```
 ![q7](assets/q7.png)
 
-**8. Copie des fichiers locaux vers le HDFS**
+**8 et 9. Copie des fichiers locaux vers le HDFS**
 
 ```bash
 hdfs dfs -copyFromLocal TP{1,2}CPP /BDDC/CPP/TPs
 hdfs dfs -copyFromLocal TP{1,2,3}JAVA /BDDC/JAVA/TPs
 ```
 
-![q8-1](assets/q8-1.png)
-![q8-2](assets/q8-2.png)
+![q8](assets/q8.png)
+![q9](assets/q9.png)
 
-**9. Affichage récursif du contenu de BDDC**
+**10. Affichage récursif du contenu de BDDC**
 
 ```bash
 hdfs dfs -ls -R /BDDC
 ```
-![q9](assets/q9.png)
+![q10](assets/q10.png)
 
-**10. Suppression du fichier TP1CPP**
+**11. Suppression du fichier TP1CPP**
 
 ```bash
 hdfs dfs -rm /BDDC/CPP/TPs/TP1CPP
 ```
-![q10](assets/q10.png)
+![q11](assets/q11.png)
 
-**11. Suppression du répertoire JAVA et de son contenu**
+**12. Suppression du répertoire JAVA et de son contenu**
 
 ```bash
 hdfs dfs -rm -r /BDDC/JAVA
 ```
-![q11](assets/q11.png)
+![q12](assets/q12.png)
 
 ## Installation HADOOP Sur LINUX
 
