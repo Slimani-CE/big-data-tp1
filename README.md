@@ -25,52 +25,58 @@ Nous vérifions ensuite que les processus sont en cours d'exécution avec la com
 Nous créons la structure demandée dans la racine du HDFS avec les commandes Hadoop suivantes :
 
 ```bash
-hadoop fs -mkdir /BDDC
-hadoop fs -mkdir /BDDC/JAVA
-hadoop fs -mkdir /BDDC/JAVA/TPs
-hadoop fs -mkdir /BDDC/JAVA/Cours
-hadoop fs -mkdir /BDDC/CPP
-hadoop fs -mkdir /BDDC/CPP/TPs
-hadoop fs -mkdir /BDDC/CPP/Cours
+hdfs dfs -mkdir /BDDC
+hdfs dfs -mkdir /BDDC/JAVA
+hdfs dfs -mkdir /BDDC/JAVA/TPs
+hdfs dfs -mkdir /BDDC/JAVA/Cours
+hdfs dfs -mkdir /BDDC/CPP
+hdfs dfs -mkdir /BDDC/CPP/TPs
+hdfs dfs -mkdir /BDDC/CPP/Cours
 ```
 `Commandes en raccourci pour créer l'arborescence demandée dans le HDFS :`
 ```bash
-hadoop fs -mkdir -p /BDDC/{JAVA/{TPs,Cours},CPP/{TPs,Cours}}
+hdfs dfs -mkdir -p /BDDC/{JAVA,CPP}/{Cours,TPs}
 ```
-
+![Q2](assets/q2.png)
 
 
 **3. Création et ajout de contenu dans les fichiers Cours de CPP**
 
 ```bash
-hadoop fs -mkdir /BDDC/CPP/Cours
-hadoop fs -put CoursCPP1 /BDDC/CPP/Cours
-hadoop fs -put CoursCPP2 /BDDC/CPP/Cours
-hadoop fs -put CoursCPP3 /BDDC/CPP/Cours
+echo "CoursCPP1" > CoursCPP1
+echo "CoursCPP2" > CoursCPP2
+echo "CoursCPP3" > CoursCPP3
+hdfs dfs -put CoursCPP{1,2,3} /BDDC/CPP/Cours
 ```
+![Q3](assets/q3_.png)
 
 **4. Affichage du contenu des fichiers CoursCPP1, CoursCPP2 et CoursCPP3**
 
 ```bash
-hadoop fs -cat /BDDC/CPP/Cours/CoursCPP1
-hadoop fs -cat /BDDC/CPP/Cours/CoursCPP2
-hadoop fs -cat /BDDC/CPP/Cours/CoursCPP3
+hdfs dfs -cat /BDDC/CPP/Cours/CoursCPP1
+hdfs dfs -cat /BDDC/CPP/Cours/CoursCPP2
+hdfs dfs -cat /BDDC/CPP/Cours/CoursCPP3
 ```
+`Commandes en raccourci`
+```bash
+hdfs dfs -cat /BDDC/CPP/Cours/CoursCPP{1,2,3}
+```
+![q4](assets/q4.png)
 
 **5. Copie des fichiers CPP vers le répertoire JAVA**
 
 ```bash
-hadoop fs -cp /BDDC/CPP/Cours/CoursCPP1 /BDDC/JAVA/Cours/CoursJAVA1
-hadoop fs -cp /BDDC/CPP/Cours/CoursCPP2 /BDDC/JAVA/Cours/CoursJAVA2
-hadoop fs -cp /BDDC/CPP/Cours/CoursCPP3 /BDDC/JAVA/Cours/CoursJAVA3
+hdfs dfs -cp /BDDC/CPP/Cours/CoursCPP1 /BDDC/JAVA/Cours/CoursJAVA1
+hdfs dfs -cp /BDDC/CPP/Cours/CoursCPP2 /BDDC/JAVA/Cours/CoursJAVA2
+hdfs dfs -cp /BDDC/CPP/Cours/CoursCPP3 /BDDC/JAVA/Cours/CoursJAVA3
 ```
 
 **6. Suppression et renommage des fichiers dans le répertoire JAVA**
 
 ```bash
-hadoop fs -rm /BDDC/JAVA/Cours/CoursJAVA3
-hadoop fs -mv /BDDC/JAVA/Cours/CoursJAVA1 /BDDC/JAVA/Cours/CoursJAVA1
-hadoop fs -mv /BDDC/JAVA/Cours/CoursJAVA2 /BDDC/JAVA/Cours/CoursJAVA2
+hdfs dfs -rm /BDDC/JAVA/Cours/CoursJAVA3
+hdfs dfs -mv /BDDC/JAVA/Cours/CoursJAVA1 /BDDC/JAVA/Cours/CoursJAVA1
+hdfs dfs -mv /BDDC/JAVA/Cours/CoursJAVA2 /BDDC/JAVA/Cours/CoursJAVA2
 ```
 
 **7. Création de fichiers locaux**
@@ -82,29 +88,29 @@ touch TP1CPP TP2CPP TP1JAVA TP2JAVA TP3JAVA
 **8. Copie des fichiers locaux vers le HDFS**
 
 ```bash
-hadoop fs -copyFromLocal TP1CPP /BDDC/CPP/TPs
-hadoop fs -copyFromLocal TP2CPP /BDDC/CPP/TPs
-hadoop fs -copyFromLocal TP1JAVA /BDDC/JAVA/TPs
-hadoop fs -copyFromLocal TP2JAVA /BDDC/JAVA/TPs
-hadoop fs -copyFromLocal TP3JAVA /BDDC/JAVA/TPs
+hdfs dfs -copyFromLocal TP1CPP /BDDC/CPP/TPs
+hdfs dfs -copyFromLocal TP2CPP /BDDC/CPP/TPs
+hdfs dfs -copyFromLocal TP1JAVA /BDDC/JAVA/TPs
+hdfs dfs -copyFromLocal TP2JAVA /BDDC/JAVA/TPs
+hdfs dfs -copyFromLocal TP3JAVA /BDDC/JAVA/TPs
 ```
 
 **9. Affichage récursif du contenu de BDDC**
 
 ```bash
-hadoop fs -ls -R /BDDC
+hdfs dfs -ls -R /BDDC
 ```
 
 **10. Suppression du fichier TP1CPP**
 
 ```bash
-hadoop fs -rm /BDDC/CPP/TPs/TP1CPP
+hdfs dfs -rm /BDDC/CPP/TPs/TP1CPP
 ```
 
 **11. Suppression du répertoire JAVA et de son contenu**
 
 ```bash
-hadoop fs -rm -r /BDDC/JAVA
+hdfs dfs -rm -r /BDDC/JAVA
 ```
 
 ## Installation HADOOP Sur LINUX
