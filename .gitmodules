@@ -1,0 +1,3 @@
+[submodule "hadoop-crud-api"]
+	path = hadoop-crud-api
+	url = https://github.com/Slimani-CE/hadoop-crud-api
