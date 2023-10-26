@@ -1,11 +1,10 @@
 # TP1 : Manipulation du système de fichiers HDFS
 
 ## Table des matières
-[Objectif](#objectif)
-[Solution](#solution)
-[API JAVA](#api-java)
-[Installation HADDOP](#installation-hadoop-sur-linux)
-
+- [Objectif](#objectif)
+- [Solution](#solution)
+- [API JAVA](#api-java)
+- [Installation HADDOP](#installation-hadoop-sur-linux)
 
 
 ## Objectif 
